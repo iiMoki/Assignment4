@@ -3,20 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/6a429cdffa.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header class="header">
+        <div>
             <h1>Rock Paper Scissors Game</h1>
-        </header>
-        <div class="score-box">
-            <span class="user">You</span>
-            <spand id="score">0-0</span>
-            <span class="comp">Computer</span>
-        </div>
-        <div class="buttons">
-            <button class="bn" onclick="" value=""><i class="fa-solid fa-hand"></i></button>
+            <div class="box">
+                <button><i class="fa-solid fa-hand" id="paper"></i></button>
+                <button><i class="fa-solid fa-hand-back-fist" id="rock"></i></button>
+                <button><i class="fa-solid fa-hand-scissors" id="scissors"></i></button>
+            </div>
+            <div class="score">
+                <p id="demo"><br></p>
+                <h1></h1>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>

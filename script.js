@@ -7,43 +7,51 @@ var computerScore=0;
 
 function play(playerSelection,computerSelection){
 if(playerSelection===computerSelection){
-    return `It\'s a tie! you both picked ${playerSelection}`
+    document.getElementById("demo").innerHTML= `It\'s a tie! you both picked ${rockBtn.outerHTML}`
 } else if(playerSelection === "rock"){
     if(computerSelection=== "scissors"){
         playerScore++;
-        return `Player wins. Player picked: ${playerSelection}, PC picked ${computerSelection}`;
+        document.getElementById("demo").innerHTML= `Player wins. Player picked: ${rockBtn.outerHTML}, PC picked ${computerSelection}`;
     } else{
         computerScore++;
-        return `PC wins, PC picked ${computerSelection}, Player picked ${playerSelection}`;
+        document.getElementById("demo").innerHTML= `PC wins, PC picked ${computerSelection}, Player picked ${rockBtn.outerHTML}`;
     }
 } else if(playerSelection === "scissors"){
     if(computerSelection === "paper"){
         playerScore++;
-        return `Player wins. Player picked: ${playerSelection}, PC picked ${computerSelection}`;
+        document.getElementById("demo").innerHTML= `Player wins. Player picked: ${rockBtn.outerHTML}, PC picked ${computerSelection}`;
     } else{
         computerScore++;
-        return `PC wins, PC picked ${computerSelection}, Player picked ${playerSelection}`;
+        document.getElementById("demo").innerHTML= `PC wins, PC picked ${computerSelection}, Player picked ${rockBtn.outerHTML}`;
     }
 } else if(playerSelection === "paper"){
     if(computerSelection === "rock"){
         playerScore++;
-        return `Player wins. Player picked: ${playerSelection}, PC picked ${computerSelection}`;
+        document.getElementById("demo").innerHTML= `Player wins. Player picked: ${rockBtn.outerHTML}, PC picked ${computerSelection}`;
     } else{
         computerScore++;
-        return `PC wins, PC picked ${computerSelection}, Player picked ${playerSelection}`;
+        document.getElementById("demo").innerHTML= `PC wins, PC picked ${computerSelection}, Player picked ${rockBtn.outerHTML}`;
     }
 }
 }
-/*function game(){
-for (let i=0; i<5; i++){
-    const playerSelection = prompt("Start the game by typing either 'Rock, Paper, or Scissors'").toLowerCase();
+ 
+function game(){
+
+for (let i=0; i<10; i++){
+    const rockBtn = document.querySelector('#rock');
+    const paperBtn = document.querySelector('#paper');
+    const scissorBtn = document.querySelector('#scissor');
+    const playerOptions = [rockBtn,paperBtn,scissorBtn];  
     const computerSelection = computerPlay();
+    rockBtn.addEventListener('click', function(){
+        document.getElementById("demo").innerHTML=`PC wins, PC picked ${computerSelection}, Player picked ${rockBtn.outerHTML}`;
+    });
     console.log(play(playerSelection, computerSelection));
 }
 if(playerScore>computerScore){
-    console.log("Final Result - Player wins. Player score: "+playerScore+ " vs PC score: "+computerScore);
+    document.getElementById("demo").innerHTML="Final Result - Player wins. Player score: "+playerScore+ " vs PC score: "+computerScore;
 } else{
-    console.log("Final Result - PC wins. Player score: "+playerScore+" vs PC score: " +computerScore);
+    document.getElementById("demo").innerHTML="Final Result - PC wins. Player score: "+playerScore+" vs PC score: " +computerScore;
 }
 }
-game();*/
+game();
